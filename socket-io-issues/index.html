@@ -27,8 +27,8 @@
 <meta property="og:site_name" content="リン屋">
 <meta property="og:description" content="最近由于项目需要接触了 socket.io 这一套工具，它本身是一个 Node.js 的包，使用 long polling 或者 websocket 的方式（在我的项目中我是用的是 websocket）提供持续的网络连接服务。由于简单好用（虽然我在知乎上看到有人说这玩意儿就是给小白玩的，2333），很多开发者为其开发了不同语言的 SDK，比如 Java、C++、Go 等，然后我项目的前端用的 No">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-12-31T10:40:20.000Z">
-<meta property="article:modified_time" content="2020-12-31T10:40:20.000Z">
+<meta property="article:published_time" content="2020-12-31T18:40:20.000Z">
+<meta property="article:modified_time" content="2020-12-31T18:40:20.000Z">
 <meta property="article:author" content="RinChanNOW">
 <meta property="article:tag" content="Node.js">
 <meta property="article:tag" content="Golang">
@@ -79,7 +79,7 @@
       
 
 
-<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/blog/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">问题解决</a></div><div id="post-meta">发布于&nbsp;<time datetime="2020-12-31T10:40:20.000Z">2020-12-31</time></div></div>
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/blog/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">问题解决</a></div><div id="post-meta">发布于&nbsp;<time datetime="2020-12-31T18:40:20.000Z">2020-12-31</time></div></div>
 
 <article class='content md post'>
 <h1 class="article-title"><span>Socket.io 踩坑记录</span></h1>
@@ -94,7 +94,7 @@
 
 <p>更多信息可以查看这个 issue：<a href="https://github.com/googollee/go-socket.io/issues/372">https://github.com/googollee/go-socket.io/issues/372</a></p>
 <h2 id="go-socket-io-与-socket-io-的兼容性问题"><a href="#go-socket-io-与-socket-io-的兼容性问题" class="headerlink" title="go-socket.io 与 socket.io 的兼容性问题"></a>go-socket.io 与 socket.io 的兼容性问题</h2><p>在前端，我一开始使用的是 3.0 版本的 socket.io。结果发现建立连接的握手请求前后端对应不上，后端触发两次 connect 事件，之后也无法进行正常的双工通信，后来发现原来 go 这个库还不支持 2.0 版本及以上的 socket.io。这其中应该是通信协议上不一样。</p>
-<p>这个项目其实很早就已经搁置了，owner 在几年前就撒手不管了，这几年一直是靠开源社区的开发者们来维护，所以这个项目的进度迟迟得不到更新。目前这个库只支持 <a href="mailto:&#115;&#x6f;&#x63;&#x6b;&#101;&#116;&#46;&#105;&#111;&#64;&#50;&#x2e;&#48;">&#115;&#x6f;&#x63;&#x6b;&#101;&#116;&#46;&#105;&#111;&#64;&#50;&#x2e;&#48;</a> 之前的版本，不支持 2.0。</p>
+<p>这个项目其实很早就已经搁置了，owner 在几年前就撒手不管了，这几年一直是靠开源社区的开发者们来维护，所以这个项目的进度迟迟得不到更新。目前这个库只支持 <a href="mailto:&#115;&#x6f;&#99;&#107;&#x65;&#x74;&#x2e;&#105;&#x6f;&#64;&#x32;&#46;&#48;">&#115;&#x6f;&#99;&#107;&#x65;&#x74;&#x2e;&#105;&#x6f;&#64;&#x32;&#46;&#48;</a> 之前的版本，不支持 2.0。</p>
 <p>如果实在要与 socket.io 2.0 进行对接，可以选用其他的语言进行开发，或者使用其他的几个 go 开源库，虽然这几个 star 不多，我也没用过。</p>
 <ul>
 <li><p><a href="https://github.com/pschlump/socketio">https://github.com/pschlump/socketio</a></p>
